@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --h-header: 4rem;
+  --h-logo-mobile: 2.5rem;
+  --h-logo-desktop: 2.5rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+body {
+  @apply bg-theme-light max-w-screen-lg mx-auto dark:bg-theme-dark text-tertiary dark:text-tertiary-light overflow-x-hidden px-2 md:px-4;
+}
+.border-default {
+  @apply border rounded-xl border-primary;
+}
+.width-policy {
+  @apply w-full;
+}
+.title-policy {
+  @apply text-2xl font-bold flex justify-center items-center py-5;
+}
+.text-policy {
+  @apply dark:text-tertiary-light/70;
+}
+.text-title-policy {
+  @apply text-xl font-medium mt-6 mb-2;
+}
+
+.header__action-icon {
+  @apply text-3xl;
+}
+
+.ct-card {
+  @apply rounded-md shadow-sm hover:shadow-md bg-card dark:bg-card-dark;
+}
+
+.profile__section,
+.job__section,
+.post__section,
+.account__section,
+.message__section,
+.comment__section,
+.company__section,
+.category__section {
+  @apply p-4 bg-card dark:bg-card-dark rounded-lg shadow-sm;
+}
+
+.category__section {
+  @apply p-2;
+}
+
+.message__card {
+  @apply p-4 bg-theme-light dark:bg-theme-dark rounded-lg shadow-sm dark:text-white cursor-pointer text-base;
+}
+
+.message__card:hover {
+  @apply bg-theme-light/80 dark:bg-theme-dark/80;
+}
+
+.message__card--primary {
+  @apply bg-secondary-light/60 dark:bg-secondary/60;
+}
+.message__card--primary:hover {
+  @apply bg-secondary-light/80 dark:bg-secondary/80;
+}

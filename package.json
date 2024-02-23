@@ -1,0 +1,57 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint:js": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check .",
+    "lint": "yarn lint:js && yarn lint:prettier",
+    "lintfix": "prettier --write --list-different . && yarn lint:js --fix",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,ts,vue}": [
+      "yarn lintfix",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@sidebase/nuxt-auth": "^0.6.0-rc.1",
+    "@typescript-eslint/parser": "^6.6.0",
+    "autoprefixer": "^10.4.15",
+    "eslint": "^8.48.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "nuxt": "^3.7.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2",
+    "vue-eslint-parser": "^9.3.1"
+  },
+  "dependencies": {
+    "@iconify-json/logos": "^1.1.37",
+    "@nuxt/ui": "^2.9.0",
+    "@nuxtjs/google-fonts": "^3.0.2",
+    "@pinia/nuxt": "^0.5.1",
+    "@popperjs/core": "^2.11.8",
+    "axios": "^1.6.2",
+    "flowbite": "^1.8.1",
+    "next-auth": "4.21.1",
+    "pinia": "^2.1.7",
+    "socket.io-client": "^4.7.2",
+    "v-calendar": "^3.1.2",
+    "vue-tippy": "^6.3.1"
+  }
+}
